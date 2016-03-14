@@ -1,0 +1,25 @@
+<div class="table-view">
+    <div ng-if="!tableView.isBusy() && tableView.items().length">
+        <h3>{{ tableView.view }}</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Developer</th>
+                <th>Rating</th>
+                <th>Price</th>
+                <th>icon</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="i in tableView.items() track by $index">
+                <td>{{ i.name }}</td>
+                <td>{{ i.developer }}</td>
+                <td>{{ i.rating }}</td>
+                <td>{{ i.price || 'Free'}}</td>
+                <td><img ng-src="{{ i.icon }}" style="width: 32px;"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
